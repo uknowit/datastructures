@@ -20,6 +20,7 @@ public:
 		void m_printArrayContent();
 private:
 		void init();
+    void findRoot(int & localFirstPoint);
 		int m_arrSize;
 		int* m_IndexArray;
 };
