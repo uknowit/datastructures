@@ -73,6 +73,6 @@ void WeightedUnion::init()
 	}
 	for(int index=0;index<m_arrSize;index++)
 	{
-		m_sizeArray[index]=index;
+		m_sizeArray[index]=1;
 	}
 }
