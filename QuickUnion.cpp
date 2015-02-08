@@ -21,10 +21,10 @@ void QuickUnion::m_union(const int firstPoint,const int secondPoint)
 
 void QuickUnion::findRoot(int & localFirstPoint)
 {
-    while(localFirstPoint != m_IndexArray[localFirstPoint])
-    {
-        localFirstPoint = m_IndexArray[m_IndexArray[localFirstPoint]];
-    }
+	while(localFirstPoint != m_IndexArray[localFirstPoint])
+	{
+		localFirstPoint = m_IndexArray[m_IndexArray[localFirstPoint]];
+	}
 }
 
 bool QuickUnion::m_find(const int firstPoint,const int secondPoint)
@@ -33,7 +33,7 @@ bool QuickUnion::m_find(const int firstPoint,const int secondPoint)
 	int root_first_point=firstPoint;
 	int root_second_point=secondPoint;
 	findRoot(root_first_point);
-    findRoot(root_second_point);
+	findRoot(root_second_point);
 	if(root_first_point==root_second_point)
 		connected=true;
 	return connected;
