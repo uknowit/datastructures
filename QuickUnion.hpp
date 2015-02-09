@@ -18,9 +18,10 @@ public:
 		void m_union(const int firstPoint,const int secondPoint);
 		bool m_find(const int firstPoint,const int secondPoint);
 		void m_printArrayContent();
+
 private:
+		void m_findRoot(int & localFirstPoint);
 		void init();
-    void findRoot(int & localFirstPoint);
 		int m_arrSize;
 		int* m_IndexArray;
 };

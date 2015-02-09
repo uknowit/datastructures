@@ -8,7 +8,7 @@ void QuickFind::m_handleNewSecondPoint(int storePoint, int secondPoint)
 	for(int index = 0;index < m_arrSize;index++)
 	{
 		if(m_IndexArray[index] == storePoint)
-			m_IndexArray[index] = secondPoint;
+			m_IndexArray[index] = m_IndexArray[secondPoint];
 	}
 }
 
@@ -17,7 +17,7 @@ void QuickFind::m_union(int firstPoint,int secondPoint)
 	if(firstPoint<m_arrSize && secondPoint<m_arrSize)
 	{
 		int storePoint=m_IndexArray[firstPoint];
-		m_IndexArray[firstPoint]=secondPoint;
+		m_IndexArray[firstPoint]=m_IndexArray[secondPoint];
 		m_handleNewSecondPoint(storePoint, secondPoint);
 	}
 	else
