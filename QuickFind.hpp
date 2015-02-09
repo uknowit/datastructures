@@ -14,7 +14,7 @@ class QuickFind {
 		void m_printArrayContent();
 	private:
 		void init();
-    void m_handleNewSecondPoint(int secondPoint, int firstPoint);
+		void m_handleNewSecondPoint(int storePoint, int secondPoint);
 		int m_arrSize;
 		int* m_IndexArray;
 };
