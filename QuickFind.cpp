@@ -101,7 +101,7 @@ int main()
 			break;
 		case 4:
 			std::cout<<"You have entered option 4"<<std::endl;
-			std::cout<<"Bye..."<<std::endl;
+			std::cout<<"Bye....."<<std::endl;
 			break;
 		default:
 			std::cout<<"You have entered an invalid option!!!"<<std::endl;
