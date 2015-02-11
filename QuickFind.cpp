@@ -1,6 +1,7 @@
 #include "../include/QuickFind.hpp"
 #include "../include/QuickUnion.hpp"
 #include "../include/WeightedUnion.hpp"
+#include "../include/ThreeSum.hpp"
 #include <string>
 
 void QuickFind::m_handleNewSecondPoint(int storePoint, int secondPoint)
@@ -52,19 +53,23 @@ void QuickFind::m_printArrayContent()
 
 int main()
 {
+	int example_array[]={5,2,4,6,1,3};
+	int sizeOfArray=sizeof(example_array)/sizeof(example_array[0]);
 	int inputOption,arraySize;
 	std::cout<<"Please enter the array size"<<std::endl;
 	std::cin>>arraySize;
 	QuickFind quickFindExample(arraySize);
 	QuickUnion quickUnionExample(arraySize);
 	WeightedUnion weightedUnionExample(arraySize);
+	ThreeSum threeSum;
 	do {
 		int firstPoint,secondPoint;
 		std::cout<<"Please select an option for operation to be performed..."<<std::endl;
 		std::cout<<"1.Union"<<std::endl;
 		std::cout<<"2.Connected"<<std::endl;
 		std::cout<<"3.Print array content"<<std::endl;
-		std::cout<<"4.Exit"<<std::endl;
+		std::cout<<"4.Print sorted example array using insertion sort"<<std::endl;
+		std::cout<<"5.Exit"<<std::endl;
 		std::cout<<"Please enter your option:";
 		std::cin>>inputOption;
 		switch(inputOption)
@@ -100,11 +105,14 @@ int main()
 			weightedUnionExample.m_printArray();
 			break;
 		case 4:
-			std::cout<<"You have entered option 4"<<std::endl;
-			std::cout<<"Bye.."<<std::endl;
+			threeSum.insertionSort(example_array,sizeOfArray);
+			break;
+		case 5:
+			std::cout<<"You have entered option 5"<<std::endl;
+			std::cout<<"Bye...."<<std::endl;
 			break;
 		default:
 			std::cout<<"You have entered an invalid option!!!"<<std::endl;
 		}
-	}while(inputOption<4 && inputOption>0);
+	}while(inputOption<5 && inputOption>0);
 }
