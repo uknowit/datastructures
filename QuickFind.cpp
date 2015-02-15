@@ -106,7 +106,8 @@ int main()
 			break;
 		case 4:
 			threeSum.insertionSort(example_array,sizeOfArray);
-			break;
+			threeSum.
+            break;
 		case 5:
 			std::cout<<"You have entered option 5"<<std::endl;
 			std::cout<<"Bye...."<<std::endl;
