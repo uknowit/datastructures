@@ -29,7 +29,7 @@ void ThreeSum::insertionSort(int arrayToBeSorted[],int arrSize)
 
 void ThreeSum::selectionSort(int arrayToBeSorted[],int arrSize)
 {
-	int noOfIterations;
+	int noOfIterations=0;
 	for(int loopIndex=0;loopIndex<arrSize;loopIndex++)
 	{
 		int smallestItem=arrayToBeSorted[loopIndex];
