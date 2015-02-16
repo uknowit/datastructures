@@ -22,14 +22,14 @@ void ThreeSum::insertionSort(int arrayToBeSorted[],int arrSize)
 		}
 		arrayToBeSorted[compareIndex+1]=comparisionKey;
 	}
-	std::cout<<"Sorted array of size...."<<arrSize<<" No of iterations for sorting array"<<noOfIterations<<std::endl;
+	std::cout<<"Sorted array of size...."<<arrSize<<" No of iterations for sorting  array is"<<noOfIterations<<std::endl;
 	for(int index=0;index<arrSize;index++)
 		std::cout<<arrayToBeSorted[index]<<" "<<std::endl;
 }
 
 void ThreeSum::selectionSort(int arrayToBeSorted[],int arrSize)
 {
-	int noOfIterations;
+	int noOfIterations=0;
 	for(int loopIndex=0;loopIndex<arrSize;loopIndex++)
 	{
 		int smallestItem=arrayToBeSorted[loopIndex];
