@@ -57,7 +57,7 @@ void WeightedUnion::m_printArray()
 			std::cout<<m_IndexArray[innerIndex]<<" ";
 		std::cout<<""<<std::endl;
 
-	std::cout<<"Size  array::"<<std::endl;
+	std::cout<<"Size array::"<<std::endl;
 	for(int innerIndex=0;innerIndex<m_arrSize;innerIndex++)
 				std::cout<<m_sizeArray[innerIndex]<<" ";
 	std::cout<<""<<std::endl;
