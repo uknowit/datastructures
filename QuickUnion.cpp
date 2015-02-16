@@ -5,7 +5,17 @@
  *      Author: shashi
  */
 
-#include "../include/QuickUnion.hpp"
+#include "include/QuickUnion.hpp"
+QuickUnion::QuickUnion(const QuickUnion& otherQuickUnion)
+{
+	this->m_arrSize=otherQuickUnion.m_arrSize;
+	this->m_IndexArray=new int[m_arrSize];
+}
+
+QuickUnion& QuickUnion::operator=(const QuickUnion& otherQuickUnion)
+{
+	return *this;
+}
 
 void QuickUnion::m_union(const int firstPoint,const int secondPoint)
 {

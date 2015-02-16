@@ -15,6 +15,8 @@ class WeightedUnion {
 public:
 	WeightedUnion(int size):m_arrSize(size){init();}
 	~WeightedUnion(){delete [] m_IndexArray;delete[] m_sizeArray;}
+	WeightedUnion(const WeightedUnion&);
+	WeightedUnion& operator=(const WeightedUnion&);
 	void m_weightedUnion(const int firstPoint,const int secondPoint);
 	bool m_find(const int firstPoint,const int secondPoint);
 	void m_printArray();

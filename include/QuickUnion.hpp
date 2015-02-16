@@ -15,6 +15,8 @@ class QuickUnion {
 public:
 		QuickUnion(int size):m_arrSize(size){init();}
 		~QuickUnion(){delete[] m_IndexArray;}
+		QuickUnion(const QuickUnion&);
+		QuickUnion& operator=(const QuickUnion&);
 		void m_union(const int firstPoint,const int secondPoint);
 		bool m_find(const int firstPoint,const int secondPoint);
 		void m_printArrayContent();

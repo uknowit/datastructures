@@ -1,6 +1,6 @@
-#include "Queue.h"
+#include "include/Queue.h"
 
-void Enqueue(char* value)
+void Queue::Enqueue(const char* value)
 {
 	int insert_index = ((tail_index)+1)%QUEUE_SIZE;
 	if(head_index==insert_index)
@@ -15,7 +15,7 @@ void Enqueue(char* value)
 	} 
 }
 
-char* Dequeue()
+char* Queue::Dequeue()
 {
 	char* value = (char*)malloc(sizeof(ELEMENT_SIZE));
 	if(head_index==tail_index)
@@ -25,29 +25,10 @@ char* Dequeue()
 	else
 	{
 		if(NULL!=queue[head_index])
-		strcpy(value,queue[head_index]);
+		if(NULL!=value)
+			strncpy(value,queue[head_index],1);
 		head_index = (head_index+1)%QUEUE_SIZE;
 	}
 	return value;
 }
 
-int main(int argc,char** argv)
-{
-	queue=(char**)malloc(sizeof(QUEUE_SIZE)+1);
-	head_index=tail_index=0;
-	int index=0;
-	while(index <QUEUE_SIZE-1)
-	{
-		Enqueue("Shashikumar");
-		index++;
-	}
-	index=0;
-	printf("%d %d \n",head_index,tail_index);
-	while(index<QUEUE_SIZE-1)
-	{
-		char* val=Dequeue();
-		printf("%d) %s\n",index,val);
-		index++;
-	}	
-	return 0;
-}

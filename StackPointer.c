@@ -1,6 +1,6 @@
-#include "StackPointer.h"
+#include "include/StackPointer.h"
 
-void push(char* value)
+void push(const char* value)
 {
 	if(stackPointer <= MAX_ELEMENTS)
 	{	
@@ -23,9 +23,9 @@ char* peek()
 	}
 	else
 	{
-		strcpy(returnPointer,stack[stackPointer-1]);
-        }
-		
+		if(NULL!=returnPointer)
+			strcpy(returnPointer,stack[stackPointer-1]);
+    }
 	return returnPointer;
 }
 char* pop()
@@ -37,32 +37,10 @@ char* pop()
 	}
 	else
 	{
-		strcpy(returnPointer,stack[stackPointer-1]);
+		if(NULL!=returnPointer)
+			strcpy(returnPointer,stack[stackPointer-1]);
 	}	
 	stackPointer--;
 	return returnPointer;
 }
-int main(int argc,char** argv)
-{
-	stack=(char**)malloc(sizeof(char*)*MAX_ELEMENTS);
-	stackPointer=0;
-	while(stackPointer<MAX_ELEMENTS)
-	{
-		char *buff="shashi";
-		push(buff);
-	}
-	while(stackPointer!=0)
-	{
-		char* peekValue=pop();	
-		printf("%s\n",peekValue);
-		free(peekValue);
-	}
-	int index=0;
-	while(index <MAX_ELEMENTS && stack[index]!=NULL)
-	{
-		free(stack[index]);
-		index++;
-	}
-	free(stack);
-	return 0;
-}
+
