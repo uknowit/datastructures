@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
+#include <memory.h>
 
 class QuickFind {
 	public:

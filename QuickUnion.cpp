@@ -5,7 +5,7 @@
  *      Author: shashi
  */
 
-#include "../include/QuickUnion.hpp"
+#include "include/QuickUnion.hpp"
 
 void QuickUnion::m_union(const int firstPoint,const int secondPoint)
 {

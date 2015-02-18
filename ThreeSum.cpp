@@ -5,7 +5,7 @@
  *      Author: shashi
  */
 
-#include "../include/ThreeSum.hpp"
+#include "include/ThreeSum.hpp"
 
 void ThreeSum::insertionSort(int arrayToBeSorted[],int arrSize)
 {

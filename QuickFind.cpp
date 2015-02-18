@@ -1,7 +1,7 @@
-#include "../include/QuickFind.hpp"
-#include "../include/QuickUnion.hpp"
-#include "../include/WeightedUnion.hpp"
-#include "../include/ThreeSum.hpp"
+#include "include/QuickFind.hpp"
+#include "include/QuickUnion.hpp"
+#include "include/WeightedUnion.hpp"
+#include "include/ThreeSum.hpp"
 #include <string>
 
 void QuickFind::m_handleNewSecondPoint(int storePoint, int secondPoint)

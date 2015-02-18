@@ -14,6 +14,7 @@
 class ThreeSum {
 public:
 	void insertionSort(int arrayToBeSorted[],int arrSize);
+	void selectionSort(int arrayToBeSorted[],int arrSize);
 };
 
 #endif /* THREESUM_CPP_ */

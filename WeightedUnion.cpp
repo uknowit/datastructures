@@ -4,7 +4,7 @@
  *  Created on: 04-Feb-2015
  *      Author: shashi
  */
-#include "../include/WeightedUnion.hpp"
+#include "include/WeightedUnion.hpp"
 
 
 
