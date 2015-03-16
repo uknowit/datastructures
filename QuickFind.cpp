@@ -56,7 +56,9 @@ int main()
 	int example_array[]={5,2,4,6,1,3,9,7,10,8};
 	int sizeOfArray=sizeof(example_array)/sizeof(example_array[0]);
 	int example_array_1[]={5,2,4,6,1,3,9,7,10,8};
-	int sizeOfArray_1=sizeof(example_array)/sizeof(example_array[0]);
+	int sizeOfArray_1=sizeof(example_array_1)/sizeof(example_array_1[0]);
+	int example_array_2[]={5,2,4,6,1,3,9,7,10,8};
+	int sizeOfArray_2=sizeof(example_array_2)/sizeof(example_array_2[0]);
 
 	int inputOption,arraySize;
 	std::cout<<"Please enter the array size"<<std::endl;
@@ -110,6 +112,7 @@ int main()
 		case 4:
 			threeSum.insertionSort(example_array,sizeOfArray);
 			threeSum.selectionSort(example_array_1,sizeOfArray_1);
+			threeSum.mergeSort(example_array_2,sizeOfArray_2);
 			break;
 		case 5:
 			std::cout<<"You have entered option 5"<<std::endl;
