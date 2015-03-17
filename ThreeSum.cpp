@@ -97,7 +97,7 @@ void ThreeSum::mergeSort(int arrayToBeSorted[],int arrSize)
 	int mid=arrSize/2;
 	int rightArr[mid];
 	int leftArr[arrSize-mid];
-	while(splitArray(arrayToBeSorted,rightArr,leftArr,arrSize))
+	while(!splitArray(arrayToBeSorted,rightArr,leftArr,arrSize))
 	{
 		mergeSort(rightArr,mid);
 		mergeSort(leftArr,arrSize);
