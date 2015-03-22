@@ -86,15 +86,15 @@ void ThreeSum::mergeSort(int outputArray[],int arrayToBeSorted[],int arrSize)
 	bool bottomsUp=false;
 	int mid=arrSize/2;
 	int rightArr[mid],leftArr[arrSize-mid];
-    if((!(arrSize==0 || arrSize==1)) && !bottomsUp)
-    {
-    	splitArray(arrayToBeSorted,rightArr,leftArr,arrSize);
-    	mergeSort(outputArray,rightArr,mid);
-    	mergeSort(outputArray,leftArr,arrSize-mid);
-    	insertionSort(rightArr,mid);
-    	insertionSort(leftArr,arrSize-mid);
-    	sortAndmergeArray(outputArray,rightArr,leftArr,arrSize);
-    }
+	if((!(arrSize==0 || arrSize==1)) && !bottomsUp)
+	{
+		splitArray(arrayToBeSorted,rightArr,leftArr,arrSize);
+		mergeSort(outputArray,rightArr,mid);
+		mergeSort(outputArray,leftArr,arrSize-mid);
+		insertionSort(rightArr,mid);
+		insertionSort(leftArr,arrSize-mid);
+		sortAndmergeArray(outputArray,rightArr,leftArr,arrSize);
+	}
 }
 
 void ThreeSum::printArray(int inputArray[],int arrSize)
