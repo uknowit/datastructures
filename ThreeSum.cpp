@@ -54,53 +54,51 @@ void ThreeSum::selectionSort(int arrayToBeSorted[],int arrSize)
 			std::cout<<arrayToBeSorted[index]<<" "<<std::endl;
 }
 
-bool ThreeSum::splitArray(int inputArray[],int rightArr[],int leftArr[],int arrSize)
+void ThreeSum::splitArray(int inputArray[],int rightArr[],int leftArr[],int arrSize)
 {
 	int mid = arrSize/2;
-	bool returnValue=false;
-	if(mid!=1)
-	{
-		for(int index=0;index<mid;index++)
-			rightArr[index]=inputArray[index];
-		for(int index=mid;index<arrSize;index++)
-			leftArr[index-mid]=inputArray[index];
-	}
-	else
-	{
-		returnValue=true;
-	}
-	return returnValue;
+	for(int index=0;index<mid;index++)
+		rightArr[index]=inputArray[index];
+	for(int index=mid;index<arrSize;index++)
+		leftArr[index-mid]=inputArray[index];
 }
 
 void ThreeSum::sortAndmergeArray(int outputArray[],int rightArr[],int leftArr[],int arrSize)
 {
-	int arrayIndex=0;
-	int rightArrIndex,leftArrIndex=0;
-	int mid = arrSize/2;
-	leftArrIndex=mid;
-	while(arrayIndex < arrSize)
+	int mid=arrSize/2;
+	int arrayIndex=0,rightIndex=0,leftIndex=0;
+	while(rightIndex<=mid-1 && leftIndex<=arrSize-mid-1)
 	{
-		if((rightArrIndex< mid-1 && leftArrIndex<arrSize) && (rightArr[rightArrIndex] > leftArr[leftArrIndex]))
-			outputArray[arrayIndex]= leftArr[leftArrIndex++];
-		else if ((rightArrIndex<=mid-1 && leftArrIndex<arrSize) && ( rightArr[rightArrIndex] > leftArr[leftArrIndex]))
-			outputArray[arrayIndex]= rightArr[rightArrIndex++];
-		else if(leftArrIndex==arrSize-1)
-			outputArray[arrayIndex]= rightArr[rightArrIndex++];
-		else if(rightArrIndex==mid-1)
-			outputArray[arrayIndex]= leftArr[leftArrIndex++];
-		arrayIndex++;
+		if(rightArr[rightIndex] < leftArr[leftIndex])
+			outputArray[arrayIndex++]=rightArr[rightIndex++];
+		else
+			outputArray[arrayIndex++]=leftArr[leftIndex++];
 	}
+	while(rightIndex<mid)
+		outputArray[arrayIndex++]=rightArr[rightIndex++];
+	while(leftIndex<arrSize-mid)
+		outputArray[arrayIndex++]=leftArr[leftIndex++];
+
 }
 
-void ThreeSum::mergeSort(int arrayToBeSorted[],int arrSize)
+void ThreeSum::mergeSort(int outputArray[],int arrayToBeSorted[],int arrSize)
 {
+	bool bottomsUp=false;
 	int mid=arrSize/2;
-	int rightArr[mid];
-	int leftArr[arrSize-mid];
-	while(splitArray(arrayToBeSorted,rightArr,leftArr,arrSize))
-	{
-		mergeSort(rightArr,mid);
-		mergeSort(leftArr,arrSize);
-	}
-	sortAndmergeArray(arrayToBeSorted,rightArr,leftArr,arrSize);
+	int rightArr[mid],leftArr[arrSize-mid];
+    if((!(arrSize==0 || arrSize==1)) && !bottomsUp)
+    {
+    	splitArray(arrayToBeSorted,rightArr,leftArr,arrSize);
+    	mergeSort(outputArray,rightArr,mid);
+    	mergeSort(outputArray,leftArr,arrSize-mid);
+    	insertionSort(rightArr,mid);
+    	insertionSort(leftArr,arrSize-mid);
+    	sortAndmergeArray(outputArray,rightArr,leftArr,arrSize);
+    }
+}
+
+void ThreeSum::printArray(int inputArray[],int arrSize)
+{
+	for(int index=0;index<arrSize;index++)
+		std::cout<<inputArray[index]<<std::endl;
 }
