@@ -2,7 +2,10 @@
 #include "include/QuickUnion.hpp"
 #include "include/WeightedUnion.hpp"
 #include "include/ThreeSum.hpp"
+#include "include/SortingAlgorithms.hpp"
 #include <string>
+#include <algorithm>
+#include <iterator>
 
 void QuickFind::m_handleNewSecondPoint(int storePoint, int secondPoint)
 {
@@ -60,6 +63,8 @@ int main()
 	int example_array_2[]={5,2,4,6,1,3,9,7,10,8};
 	int sizeOfArray_2=sizeof(example_array_2)/sizeof(example_array_2[0]);
 	int outputArray[sizeOfArray_2];
+	int example_array_3[]={5,2,4,6,1,3,9,7,10,8};
+	int sizeOfArray_3=sizeof(example_array_3)/sizeof(example_array_3[0]);
 	int inputOption,arraySize;
 	std::cout<<"Please enter the array size"<<std::endl;
 	std::cin>>arraySize;
@@ -67,6 +72,7 @@ int main()
 	QuickUnion quickUnionExample(arraySize);
 	WeightedUnion weightedUnionExample(arraySize);
 	ThreeSum threeSum;
+	SortingAlgorithms algorithms;
 	do {
 		int firstPoint,secondPoint;
 		std::cout<<"Please select an option for operation to be performed..."<<std::endl;
@@ -116,6 +122,10 @@ int main()
 			std::cout<<"Merge sort implementation...."<<std::endl;
 			std::cout<<"============================="<<std::endl;
 			threeSum.printArray(outputArray,sizeOfArray_2);
+			std::cout<<"============================="<<std::endl;
+			std::random_shuffle(std::begin(example_array_2),std::end(example_array_2));
+			algorithms.QuickSort(example_array_3,0,sizeOfArray_3);
+			threeSum.printArray(example_array_3,sizeOfArray_3);
 			break;
 		case 5:
 			std::cout<<"You have entered option 5"<<std::endl;
