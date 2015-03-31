@@ -63,7 +63,7 @@ int main()
 	int example_array_2[]={5,2,4,6,1,3,9,7,10,8};
 	int sizeOfArray_2=sizeof(example_array_2)/sizeof(example_array_2[0]);
 	int outputArray[sizeOfArray_2];
-	int example_array_3[]={5,2,4,6,1,3,9,7,10,8};
+	int example_array_3[]={5,2,4,10,1,3,9,7,6,8};
 	int sizeOfArray_3=sizeof(example_array_3)/sizeof(example_array_3[0]);
 	int inputOption,arraySize;
 	std::cout<<"Please enter the array size"<<std::endl;
